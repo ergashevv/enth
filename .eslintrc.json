@@ -1,0 +1,8 @@
+{
+    "rules": {
+      "react/no-unsupported-version": ["error", {
+        "version": "19.0.0",
+        "ignoreAntdWarning": true
+      }]
+    }
+  }

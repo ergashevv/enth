@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.ant-btn {
+  transition: all 0.2s ease-in-out !important;
+}
+
+.ant-input {
+  border-radius: 12px !important;
+  padding: 16px 20px !important;
+}
