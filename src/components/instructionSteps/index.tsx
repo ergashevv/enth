@@ -1,42 +1,116 @@
-"use client";
-
-import { PlusCircle, MinusCircle } from "lucide-react";
+"use client"
 import { useState } from "react";
+import { Plus, Minus } from "lucide-react";
 
-type InstructionStepProps = {
-    number: number;
-    text: string;
-    details?: string;
-    buttonText?: string;
-};
+const HowItWorks = () => {
+  const instructions = [
+    {
+      number: 1,
+      title: "Зарегистрируйся в Ethno Logistics",
+      details:
+        "Пройдите регистрацию, чтобы получить доступ ко всем сервисам. Получи личный ID номер и адрес за границей."
+    },
+    {
+      number: 2,
+      title: "Создай адрес получателя",
+      details: "Добавьте новый адрес доставки для удобства получения заказов."
+    },
+    {
+      number: 3,
+      title: "Зарегистрируйся на сайте магазина",
+      details: "Создайте учетную запись в интернет-магазине для покупок."
+    },
+    {
+      number: 4,
+      title: "Приобрести товар в интернет-магазине",
+      details:
+        "Теперь необходимо приобрести и оплатить доставку на наш склад. Добавь личный ID-номер возле имени или в другой строке, если система не пропускает. Укажи адрес склада и номер склада в строке с телефоном."
+    },
+    {
+      number: 5,
+      title: "Зарегистрируй покупку",
+      details:
+        "Зарегистрируй покупку в личном кабинете на сайте или в приложении, прикрепи чек и укажи номер заказа."
+    },
+    {
+      number: 6,
+      title: "Оплати доставку",
+      details: "Оплати доставку на сайте или в приложении в удобной валюте."
+    },
+    {
+      number: 7,
+      title: "Отправь посылку",
+      details:
+        "Отправь посылку на указанный склад с ID и всеми необходимыми данными."
+    },
+    {
+      number: 8,
+      title: "Получи заказ",
+      details: "Курьер доставит покупку в Узбекистане или Кыргызстане."
+    }
+  ];
 
-const InstructionStep: React.FC<InstructionStepProps> = ({ number, text, details }) => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    return (
-        <div className="bg-[#E6F7FF] rounded-xl p-4 shadow-sm">
-            <div className="flex items-center justify-between cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-                <div className="flex items-center gap-4">
-                    <span className="text-2xl font-bold text-blue-600">{number}</span>
-                    <span className="font-medium">{text}</span>
+  const toggleOpen = (index: number) => {
+    setOpenIndex(prev => (prev === index ? null : index));
+  };
+
+  return (
+    <main className="container mx-auto px-4 mt-[60px] sm:mt-[80px] md:mt-[100px]">
+      <h1 className="text-[28px] sm:text-[36px] md:text-[50px] font-bold text-[#0060AE] mb-8">
+        Подробная инструкция
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {instructions.map(({ number, title, details }, index) => {
+          const isOpen = openIndex === index;
+          return (
+            <div
+              key={number}
+              className="bg-[#E6F7FF] rounded-3xl p-5 md:p-6 shadow-sm text-left"
+            >
+              <button
+                className="flex items-center justify-between w-full gap-4"
+                onClick={() => toggleOpen(index)}
+              >
+                <div className="flex items-center gap-4 text-left w-full">
+                  <div className="w-10 h-10 min-w-[40px] flex items-center justify-center bg-[#0060AE] text-white text-lg font-bold rounded-full">
+                    {number}
+                  </div>
+                  <h3 className="text-[15px] sm:text-base md:text-[16px] font-semibold text-[#0060AE] leading-snug">
+                    {title}
+                  </h3>
                 </div>
-                {isOpen ? (
-                    <MinusCircle className="h-6 w-6 text-red-500" />
-                ) : (
-                    <PlusCircle className="h-6 w-6 text-blue-500" />
-                )}
-            </div>
+                <div className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border-2 transition-colors duration-300 ${isOpen ? "border-red-500 text-red-500" : "border-[#0060AE] text-[#0060AE]"}`}>
+                  {isOpen ? (
+                    <Minus className="w-5 h-5" />
+                  ) : (
+                    <Plus className="w-5 h-5" />
+                  )}
+                </div>
+              </button>
 
-            {isOpen && details && (
-                <div className="mt-4 p-4 bg-[#E6F7FF] rounded-lg">
-                    <p className="text-sm text-gray-700">{details}</p>
-                    <button className="mt-4 px-4 py-2 border border-red-500 text-red-500 rounded-full  transition ml-[60%]">
-                        Выбрать магазин
+              <div
+                className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr] mt-4" : "grid-rows-[0fr]"}`}
+              >
+                <div className="overflow-hidden">
+                  <div className="text-gray-700 text-sm md:text-[14px] leading-relaxed">
+                    {details}
+                  </div>
+                  {number === 4 && (
+                    <button className="mt-4 px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-50 text-sm">
+                      Выбрать магазин
                     </button>
+                  )}
                 </div>
-            )}
-        </div>
-    );
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </main>
+  );
 };
 
-export default InstructionStep;
+export default HowItWorks;

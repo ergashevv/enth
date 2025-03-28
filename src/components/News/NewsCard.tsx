@@ -1,3 +1,4 @@
+// components/News/NewsCard.tsx
 "use client";
 import { Button } from "antd";
 import Image from "next/image";
@@ -14,9 +15,8 @@ export const NewsCard = ({
   image: string;
 }) => {
   return (
-    <div className="bg-[#E6F7FF] p-6 rounded-2xl shadow-none h-full flex flex-col">
-      {/* Rasm qismi */}
-      <div className="relative w-full h-48 mb-6 rounded-xl overflow-hidden">
+    <div className="bg-[#E6F7FF] p-6 rounded-[24px] shadow-none h-full flex flex-col">
+      <div className="relative w-full h-[200px] md:h-[220px] mb-6 rounded-[16px] overflow-hidden">
         <Image
           src={image}
           alt={title}
@@ -27,26 +27,33 @@ export const NewsCard = ({
         />
       </div>
 
-      <h3 className="font-montserrat font-bold text-[28px] leading-[34px] text-[#0060AE] mb-3">
-        {title}
-      </h3>
-      
-      <p className="text-[#565252] text-base mb-4 flex-grow">
-        {description}
-      </p>
-      
-      <div className="mt-auto">
-        <div className="text-[#565252] text-sm mb-3">{date}</div>
-        <Button
-          className="w-full font-montserrat !h-12 !text-lg !rounded-lg hover:!border-[#0060AE] hover:!text-[#0060AE]"
-          style={{
-            border: '2px solid #0060AE',
-            color: '#0060AE',
-            backgroundColor: 'transparent'
-          }}
-        >
-          Читать больше
-        </Button>
+      <div className="flex flex-col flex-grow">
+        <h3 className="font-montserrat font-bold text-[20px] md:text-[24px] leading-[28px] md:leading-[32px] text-[#0060AE] mb-3">
+          {title}
+        </h3>
+
+        <p className="text-[#565252] text-sm md:text-base leading-[20px] mb-3">
+          {description}
+        </p>
+
+        <div className="flex items-center justify-between mt-auto">
+          <div className="text-[#565252] text-xs md:text-sm leading-[18px]">
+            {date}
+          </div>
+
+          <Button
+            className="!h-[44px] !text-sm md:!text-base font-montserrat hover:!border-[#0060AE] hover:!text-[#0060AE]"
+            style={{
+              border: '1.5px solid #0060AE',
+              color: '#0060AE',
+              backgroundColor: 'transparent',
+              padding: '0 20px',
+              borderRadius: '130px'
+            }}
+          >
+            Читать больше
+          </Button>
+        </div>
       </div>
     </div>
   );
