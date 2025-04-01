@@ -52,7 +52,6 @@ export default function DeliveryCalculator() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Доставка */}
           <div>
             <h3 className="text-[18px] font-semibold text-[#0060AE] mb-3 leading-[24px]">1. Доставка</h3>
             <hr className="border-b border-gray-300 mb-3" />
@@ -76,7 +75,6 @@ export default function DeliveryCalculator() {
             </div>
           </div>
 
-          {/* Тип груза */}
           <div>
             <h3 className="text-[18px] font-semibold text-[#0060AE] mb-3 leading-[24px]">2. Тип груза</h3>
             <hr className="border-b border-gray-300 mb-3" />
@@ -122,7 +120,6 @@ export default function DeliveryCalculator() {
             </div>
           </div>
 
-          {/* Рассчитать цену */}
           <div className="bg-white px-6 py-6 rounded-[30px] shadow-md">
             <h3 className="text-[18px] font-semibold text-[#0060AE] mb-3 leading-[24px]">3. Рассчитать цену</h3>
             <hr className="border-b border-gray-300 mb-3" />

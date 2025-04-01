@@ -27,15 +27,12 @@ const countries: Country[] = [
 const Footer: FC = () => {
     return (
         <footer className="bg-[#E6F7FF] text-gray-800 pt-12 pb-8">
-            {/* Top Section */}
             <div className="max-w-[1200px] mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-                {/* Logo & Text */}
                 <div className="flex flex-col items-center md:items-start">
                     <Image src="/icons/ethno.svg" alt="Ethno Logistics" width={150} height={50} />
                     <p className="text-[14px] mt-2 font-normal">© Все права защищены</p>
                 </div>
 
-                {/* Links */}
                 <div className="grid grid-cols-2 gap-4">
                     <ul className="space-y-2 text-[14px] font-normal">
                         <li>
@@ -103,7 +100,6 @@ const Footer: FC = () => {
                     </ul>
                 </div>
 
-                {/* Country Select + Calculator & Login */}
                 <div className="flex flex-col gap-3 md:ml-8">
                     <h1 className="text-[16px] font-normal">Сменить страну</h1>
                     <span className="text-[14px] leading-snug font-normal">
@@ -142,10 +138,8 @@ const Footer: FC = () => {
                 </div>
             </div>
 
-            {/* Bottom Section */}
             <div className="max-w-[1200px] mx-auto mt-10 px-4">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                    {/* Left: Payment Icons and Store Buttons */}
                     <div className="md:flex-row items-center gap-4">
                         <div className="flex pb-3  flex-wrap gap-2 justify-center md:justify-start">
                             {["Visa", "Mastercard", "uzcard", "payme", "click", "humo"].map((name) => (

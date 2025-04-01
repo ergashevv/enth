@@ -20,7 +20,6 @@ export default function Delivery() {
                         />
                     </div>
 
-                    {/* Text Block */}
                     <div className="text-center lg:text-left w-full">
                         <h1 className="pt-[90px] text-[clamp(32px,5vw,50px)] font-bold leading-[120%] font-montserrat text-blue-600 mb-[24px] lg:mb-[32px]">
                             <span className="text-blue-600">Ваш </span>

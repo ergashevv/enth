@@ -29,7 +29,6 @@ export default function HowItWorks() {
 
     return (
         <main className="min-h-screen bg-white">
-            {/* Hero Section */}
             <section className="container mx-auto py-10 md:py-16">
                 <div className="max-[426px]:flex-wrap flex justify-between grid-cols-1 md:grid-cols-2 gap-10 items-center mt-[30] mb-[102]">
                     <div>
@@ -59,7 +58,6 @@ export default function HowItWorks() {
                 </div>
             </section>
 
-            {/* Steps Section */}
             <section className="container mx-auto py-12">
                 <h2 className="text-[32px] sm:text-[40px] md:text-[50px] font-semibold text-red-600 mb-10">
                     Как это работает?

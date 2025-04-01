@@ -6,9 +6,7 @@ export default function TrackingPage() {
     return (
         <main className="min-h-screen bg-white py-[68]">
             <div className="container px-4 py-8 md:py-14 font-montserrat">
-                {/* Top section: Title + Form + Image */}
                 <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
-                    {/* Left side - Title and form */}
                     <div className="w-full lg:w-1/2">
                         <h1 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[50px] font-bold text-[#0060AE] mb-6 sm:mb-10 leading-[120%]">
                             Отслеживание  посылок
@@ -53,7 +51,6 @@ export default function TrackingPage() {
                         </form>
                     </div>
 
-                    {/* Right side - Image */}
                     <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
                         <Image
                             src="/icons/tracking.png"
@@ -65,9 +62,7 @@ export default function TrackingPage() {
                     </div>
                 </div>
 
-                {/* Bottom section: Results + Button */}
                 <div className="flex flex-col lg:flex-row items-start lg:items-end gap-6 mt-8 lg:mt-10">
-                    {/* Info Cards */}
                     <div className="flex flex-col gap-4 w-full sm:w-auto">
                         {[
                             { label: "Дата создания", value: "01.01.2000" },
@@ -90,7 +85,6 @@ export default function TrackingPage() {
                         ))}
                     </div>
 
-                    {/* Button (centered on mobile, 60% width) */}
                     <div className="w-full lg:w-auto flex justify-center lg:justify-end">
                         <button className="bg-[#0060AE] text-white text-[14px] sm:text-[16px] py-3 px-6 rounded-full hover:bg-blue-700 transition-colors font-medium w-[60%] mx-auto sm:w-auto">
                             Распечатать накладную

@@ -16,7 +16,6 @@ export const BusinessCard = ({
 }) => {
   return (
     <div className="bg-[#E6F7FF] rounded-[30px] p-[15px] h-full flex flex-col">
-      {/* Rasm qismi */}
       <div className="relative h-48 mb-6 rounded-2xl overflow-hidden">
         <Image
           src={pic}

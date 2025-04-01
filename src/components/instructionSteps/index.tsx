@@ -67,7 +67,6 @@ const HowItWorks = () => {
               key={number}
               className="bg-[#E6F7FF] rounded-3xl p-5 md:p-6 shadow-sm text-left"
             >
-              {/* Title + raqam + +/- icon */}
               <button
                 className="flex items-center justify-between w-full gap-4"
                 onClick={() => toggleOpen(index)}
@@ -95,7 +94,6 @@ const HowItWorks = () => {
                 </div>
               </button>
 
-              {/* Ochilgan (details) qismi */}
               <div
                 className={`
                   overflow-hidden

@@ -69,7 +69,6 @@ export function Header() {
 
   return (
     <header className="w-full bg-white font-montserrat">
-      {/* Top actions */}
       <div className="py-2">
         <div className="container px-4 flex justify-end items-center gap-3">
           <Dropdown menu={{ items: countryMenuItems }} placement="bottomLeft" arrow>
@@ -97,7 +96,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Navigation */}
       <div>
         <div className="container bg-[#E6F7FF] mx-auto px-4 rounded-[15px]">
           <nav className="flex items-center h-16 justify-between">
@@ -134,7 +132,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Drawer */}
       <Drawer
         placement="left"
         onClose={() => setIsOpen(false)}

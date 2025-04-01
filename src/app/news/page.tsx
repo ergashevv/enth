@@ -53,17 +53,12 @@ export default function NewsPage() {
       image: "/icons/news.png",
     },
   ];
-
-
   return (
     <div className="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-8 py-8">
       <h1 className="font-montserrat font-bold text-[28px] sm:text-[36px] md:text-[50px] leading-[120%] text-[#0060AE] mb-8">
         Новости и акции
       </h1>
-
-
       <SearchFilter />
-
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {newsData.map((item, index) => (
           <NewsCard
@@ -75,7 +70,6 @@ export default function NewsPage() {
           />
         ))}
       </div>
-
       <Pagination />
     </div>
   );
