@@ -80,7 +80,7 @@ export default function Company() {
         </div>
       </section>
 
-      <div className="mt-8 flex justify-center">
+      <div className="mt-8 flex justify-center mb-4">
             <button className="bg-[#0060AE] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full transition-colors">
               Перейти к покупкам
             </button>
