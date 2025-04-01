@@ -7,7 +7,7 @@ export default function Delivery() {
     return (
         <div className="w-full bg-white">
             <div className="container  pt-24 pb-16  mx-auto mb-5">
-                <div className="flex flex-col lg:flex-row-reverse items-center gap-12">
+                <div className="flex flex-col lg:flex-row-reverse items-center gap-12 mb-[123px]">
 
                     <div className="relative w-full max-w-[613px] aspect-[613/467] mx-auto">
                         <div className="absolute bottom-0 left-[10%] w-[80%] h-[80%] bg-[#F3C16F] rounded-[50px] z-0" />
@@ -22,7 +22,7 @@ export default function Delivery() {
 
                     {/* Text Block */}
                     <div className="text-center lg:text-left w-full">
-                        <h1 className="text-[clamp(32px,5vw,50px)] font-bold leading-[120%] font-montserrat text-blue-600 mb-[24px] lg:mb-[32px]">
+                        <h1 className="pt-[90px] text-[clamp(32px,5vw,50px)] font-bold leading-[120%] font-montserrat text-blue-600 mb-[24px] lg:mb-[32px]">
                             <span className="text-blue-600">Ваш </span>
                             <span className="text-red-500">молниеносный </span>
                             <span className="block text-blue-600">партнер по доставке</span>
