@@ -46,17 +46,17 @@ export function Header() {
       try {
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
-        // API dan kelgan country kodiga mos mamlakatni qidiring
-        const userCountry =
-          countries.find((c) => c.code === data.country_code) || selectedCountry;
+        const userCountry = countries.find((c) => c.code === data.country_code) || selectedCountry;
         setSelectedCountry(userCountry);
       } catch (error) {
         console.error("Geolokatsiya API xatosi:", error);
-        // Xato yuz bersa, selectedCountry o'zgarmaydi (fallback: Узбекистан)
       }
     }
     fetchUserCountry();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  
+  
 
   const navigationLinks = [
     { href: "/tracking", label: "Отследить посылку" },
