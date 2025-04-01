@@ -1,4 +1,3 @@
-// components/News/NewsCard.tsx
 "use client";
 import { Button } from "antd";
 import Image from "next/image";

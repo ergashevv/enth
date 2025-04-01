@@ -2,7 +2,7 @@
 const nextConfig = {
   images: {
     domains: ['picsum.photos', 'localhost', 'your-domain.com'],
-    unoptimized: true, // BARCHA next/image lar uchun
+    unoptimized: true, 
   },
   output: 'export',
 };

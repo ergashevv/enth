@@ -18,7 +18,6 @@ export function Header() {
     { label: "Китай", icon: "/icons/chinaFlag.svg", code: "CN" },
   ];
 
-  // Dastlabki qiymat sifatida "Узбекистан" ni o'rnatamiz
   const [selectedCountry, setSelectedCountry] = useState({
     label: "Узбекистан",
     icon: "/icons/uzFlag.svg",
@@ -26,7 +25,6 @@ export function Header() {
   });
   const [isOpen, setIsOpen] = useState(false);
 
-  // Dropdown uchun menyu elementlari
   const countryMenuItems = countries.map((country, index) => ({
     key: index,
     label: (
@@ -40,7 +38,6 @@ export function Header() {
     ),
   }));
 
-  // API orqali foydalanuvchining mamlakatini aniqlash
   useEffect(() => {
     async function fetchUserCountry() {
       try {
@@ -53,7 +50,6 @@ export function Header() {
       }
     }
     fetchUserCountry();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   
