@@ -156,7 +156,7 @@ export function Header() {
               type="text"
               icon={<CloseOutlined style={{ fontSize: "20px" }} />}
               onClick={() => setIsOpen(false)}
-              className="hover:text-[#0060AE]"
+              className="hover:ext-[#0060AE]"
             />
           </div>
           <div className="flex flex-col px-6 pt-6 gap-4">
@@ -164,7 +164,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[18px] text-black font-medium border-b border-gray-100 pb-2 hover:text-[#0060AE] transition-colors"
+                className="text-[18px] text-black! font-medium border-b border-gray-100 pb-2 hover:text-[#0060AE] transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
