@@ -57,19 +57,17 @@ const HowItWorks = () => {
   };
 
   return (
-    <main className="container mx-auto px-4 mt-[60px] sm:mt-[80px] md:mt-[100px]">
-      <h1 className="text-[28px] sm:text-[36px] md:text-[50px] font-bold text-[#0060AE] mb-8">
-        Подробная инструкция
-      </h1>
-
+    <main className="mx-auto mt-[60px] sm:mt-[80px] md:mt-[100px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {instructions.map(({ number, title, details }, index) => {
           const isOpen = openIndex === index;
+
           return (
             <div
               key={number}
               className="bg-[#E6F7FF] rounded-3xl p-5 md:p-6 shadow-sm text-left"
             >
+              {/* Title + raqam + +/- icon */}
               <button
                 className="flex items-center justify-between w-full gap-4"
                 onClick={() => toggleOpen(index)}
@@ -82,7 +80,13 @@ const HowItWorks = () => {
                     {title}
                   </h3>
                 </div>
-                <div className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border-2 transition-colors duration-300 ${isOpen ? "border-red-500 text-red-500" : "border-[#0060AE] text-[#0060AE]"}`}>
+                <div
+                  className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border-2 transition-colors duration-300 ${
+                    isOpen
+                      ? "border-red-500 text-red-500"
+                      : "border-[#0060AE] text-[#0060AE]"
+                  }`}
+                >
                   {isOpen ? (
                     <Minus className="w-5 h-5" />
                   ) : (
@@ -91,18 +95,26 @@ const HowItWorks = () => {
                 </div>
               </button>
 
+              {/* Ochilgan (details) qismi */}
               <div
-                className={`grid transition-[grid-template-rows] duration-500 ease-in-out ${isOpen ? "grid-rows-[1fr] mt-4" : "grid-rows-[0fr]"}`}
+                className={`
+                  overflow-hidden
+                  transition-all duration-500 ease-in-out
+                  ${isOpen ? "max-h-[400px] mt-4" : "max-h-0"}
+                `}
               >
-                <div className="overflow-hidden">
-                  <div className="text-gray-700 text-sm md:text-[14px] leading-relaxed">
+                <div
+                  className={`
+                    ${isOpen ? "border-t border-[#0060AE] pt-4" : ""}
+                  `}
+                >
+                  <p className="text-gray-700 text-sm md:text-[14px] leading-relaxed">
                     {details}
-                  </div>
-                  {number === 4 && (
-                    <button className="mt-4 px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-50 text-sm">
+                  </p>
+
+                    <button className="float-right mt-4 px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-50 text-sm">
                       Выбрать магазин
                     </button>
-                  )}
                 </div>
               </div>
             </div>

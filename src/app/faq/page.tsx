@@ -26,7 +26,7 @@ const faqData = [
 
 const FAQ = () => {
   return (
-    <div className="w-full bg-white py-12">
+    <div className="container">
       <div className="max-w-5xl mx-auto px-4 text-center">
         {/* FAQ Title */}
         <h2 className="text-[32px] text-left md:text-[40px] font-bold text-[#0047AB] mb-10">

@@ -16,7 +16,7 @@ export const BusinessCard = ({
   buttonText: string;
 }) => {
   return (
-    <div className="bg-[#E6F7FF] rounded-[30px] p-6 h-full flex flex-col">
+    <div className="bg-[#E6F7FF] rounded-[30px] p-[15px] h-full flex flex-col">
       {/* Rasm qismi */}
       <div className="relative h-48 mb-6 rounded-2xl overflow-hidden">
         <Image
@@ -51,16 +51,12 @@ export const BusinessCard = ({
         ))}
       </div>
 
-      <Button
-        className="!h-12 !px-8 !text-[16px] !font-semibold !rounded-full hover:!bg-[#0060AE]/10"
-        style={{
-          border: '2px solid #0060AE',
-          color: '#0060AE',
-          backgroundColor: 'transparent'
-        }}
+      <button
+        className="py-[12px] px-[5px] mt-[30px] rounded-[130px] text-white bg-[#0060AE] text-[16px] font-montserrat font-semibold text-base leading-6 tracking-normal text-center align-middle"
+
       >
         {buttonText}
-      </Button>
+      </button>
     </div>
   );
 };

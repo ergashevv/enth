@@ -1,18 +1,40 @@
 const Tariffs = () => {
     return (
-      <main className="container mx-auto px-4 mt-[60px] sm:mt-[80px] md:mt-[100px]">
+      <main className="container mx-auto px-4 mt-[60px] sm:mt-[80px]">
         <h1 className="text-[32px] sm:text-[40px] md:text-[50px] font-bold text-[#0060AE] mb-6">Тарифы</h1>
   
         <div className="my-[30px] sm:my-[40px] md:my-[50px] overflow-x-auto">
           <table className="min-w-[700px] w-full rounded-2xl border-separate border-spacing-2 bg-[#E6F7FF] border border-gray-300 text-sm sm:text-[15px] md:text-base">
             <thead>
               <tr>
-                <th className="p-4 text-[#0060AE] whitespace-nowrap">КУДА</th>
-                <th className="p-4 text-[#0060AE] whitespace-nowrap">ЭКСПРЕСС</th>
-                <th className="p-4 text-[#0060AE] whitespace-nowrap">СТАНДАРТ</th>
-                <th className="p-4 text-[#0060AE] whitespace-nowrap">УЛЬТРА</th>
-                <th className="p-4 text-[#0060AE] whitespace-nowrap">АВТО</th>
-                <th className="p-4 text-[#0060AE] whitespace-nowrap">АВТО-ЭКОНОМ</th>
+                <th className="p-4 whitespace-nowrap font-montserrat font-semibold text-[14px] leading-[24px] text-center tracking-normal text-[#0060AE]">
+                  КУДА
+                </th>
+                <th className="p-4 whitespace-nowrap font-montserrat font-semibold text-[14px] leading-[24px] text-center tracking-normal text-[#0060AE]">
+                  ЭКСПРЕСС
+                  <br />
+                  3-5 рабочих дней
+                </th>
+                <th className="p-4 whitespace-nowrap font-montserrat font-semibold text-[14px] leading-[24px] text-center tracking-normal text-[#0060AE]">
+                  СТАНДАРТ
+                  <br />
+                  3-5 рабочих дней
+                </th>
+                <th className="p-4 whitespace-nowrap font-montserrat font-semibold text-[14px] leading-[24px] text-center tracking-normal text-[#0060AE]">
+                  УЛЬТРА
+                  <br />
+                  3-5 рабочих дней
+                </th>
+                <th className="p-4 whitespace-nowrap font-montserrat font-semibold text-[14px] leading-[24px] text-center tracking-normal text-[#0060AE]">
+                  АВТО
+                  <br />
+                  3-5 рабочих дней
+                </th>
+                <th className="p-4 whitespace-nowrap font-montserrat font-semibold text-[14px] leading-[24px] text-center tracking-normal text-[#0060AE]">
+                  АВТО-ЭКОНОМ
+                  <br />
+                  3-5 рабочих дней
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -25,7 +47,10 @@ const Tariffs = () => {
               ].map((row, index) => (
                 <tr key={index} className="odd:bg-white even:bg-gray-50 text-center">
                   {row.map((cell, cellIndex) => (
-                    <td key={cellIndex} className="border-gray-300 rounded-lg p-3 sm:p-4 whitespace-pre-line text-[12px] sm:text-[13px] text-center">
+                    <td
+                      key={cellIndex}
+                      className="border-gray-300 rounded-lg p-3 sm:p-4 whitespace-pre-line text-[12px] sm:text-[13px] text-center"
+                    >
                       {cell}
                     </td>
                   ))}
@@ -36,14 +61,15 @@ const Tariffs = () => {
         </div>
   
         <p className="text-[12px] sm:text-[13px] leading-relaxed">
-          Цены указаны только для отправки личных вещей от ПВЗ до ПВЗ.<br />
-          По направлению Россия — Узбекистан по тарифам СТАНДАРТ и АВТО-ЭКОНОМ для оформления груза требуется фото/скан паспорта получателя.<br />
-          Стоимость и сроки перевозки коммерческих изделий, а также дорогостоящих изделий свыше 250$ рассчитывается с менеджером по согласованию.<br />
-          Возможна доплата за габариты посылки при превышении суммы сторон 100 см.<br />
-          Возможна доставка во все регионы страны-доставки.
+          Цены указаны только для отправки личных вещей от ПВЗ до ПВЗ.<br />
+          По направлению Россия — Узбекистан по тарифам СТАНДАРТ и АВТО-ЭКОНОМ для оформления груза требуется фото/скан паспорта получателя.<br />
+          Стоимость и сроки перевозки коммерческих изделий, а также дорогостоящих изделий свыше 250$ рассчитывается с менеджером по согласованию.<br />
+          Возможна доплата за габариты посылки при превышении суммы сторон 100 см.<br />
+          Возможна доставка во все регионы страны-доставки.
         </p>
       </main>
-    )
-  }
+    );
+  };
   
-  export default Tariffs
+  export default Tariffs;
+  

@@ -28,23 +28,21 @@ export default function Company() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      <section className="container mx-auto px-4 py-8 sm:py-10 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <main className="container min-h-screen bg-white py-[30]">
+      <section className="px-4 py-8 sm:py-10 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-[130]">
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-4xl md:text-[50px] font-bold">
               <span className="text-[#0060AE]">О компании</span>
               <br />
               <span className="text-red-500">Ethno Logistics</span>
             </h1>
-            <div className="space-y-4 text-gray-600 text-sm sm:text-base">
-              <p>
+            <div >
+              <p className="space-y-4 text-gray-600 text-sm sm:text-base">
                 Ethno Logistics — международная транспортно-логистическая компания, работает с 2015 года, обеспечивает полный комплекс услуг по доставке и хранению груза.
+                Доставим груз авиационным и автомобильным видами транспорта. Наша компания предложит индивидуальные условия доставки груза, исходя из ваших основных потребностей 
+                Мы осуществляем доставку документов, посылок, интернет-заказов, коммерческих грузов.
               </p>
-              <p>
-                Доставим груз авиационным и автомобильным видами транспорта. Наша компания предложит индивидуальные условия доставки груза, исходя из ваших основных потребностей.
-              </p>
-              <p>Мы осуществляем доставку документов, посылок, интернет-заказов, коммерческих грузов.</p>
             </div>
           </div>
 
@@ -64,28 +62,29 @@ export default function Company() {
         </div>
       </section>
 
-      <section className="container mx-auto rounded-3xl bg-[#E6F7FF] py-8 sm:py-10 md:py-14">
+      <section className="rounded-3xl bg-[#E6F7FF] py-8 sm:py-10 md:py-14">
         <div className="px-4">
-          <h2 className="text-xl sm:text-2xl md:text-[40px] font-bold text-[#0060AE] mb-6 sm:mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-[50px] font-bold text-[#0060AE] mb-6 sm:mb-8">
             Мы осуществляем доставку
             <br className="hidden sm:block" />
             между следующими странами
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:px-[60]">
             {countries.map((country) => (
               <CountryCard key={country.name} name={country.name} flag={country.flag} />
             ))}
           </div>
 
-          <div className="mt-8 flex justify-center">
+      
+        </div>
+      </section>
+
+      <div className="mt-8 flex justify-center">
             <button className="bg-[#0060AE] text-white px-6 sm:px-8 py-2 sm:py-3 rounded-full transition-colors">
               Перейти к покупкам
             </button>
           </div>
-        </div>
-      </section>
-
       <section className="container mx-auto px-4 py-10 sm:py-12 md:py-16">
         <h2 className="text-xl sm:text-2xl md:text-[40px] font-bold text-[#0060AE] mb-6 sm:mb-8">Документация</h2>
         <div className="space-y-4 w-full">

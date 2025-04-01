@@ -1,84 +1,103 @@
 "use client"
 
-import { Col, Form, Input, Row } from "antd"
 import Image from "next/image"
 
 export default function TrackingPage() {
-  const [form] = Form.useForm()
-  return (
-    <main className="min-h-screen bg-white">
-      <div className="container mx-auto px-4 py-8 md:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-          {/* Left content */}
-          <div className="order-2 lg:order-1">
-            <h1 className="text-[32px] sm:text-[40px] md:text-[50px] font-bold text-[#0060AE] mb-8">
-              Отслеживание <br /> посылок
-            </h1>
+    return (
+        <main className="min-h-screen bg-white py-[68]">
+            <div className="container px-4 py-8 md:py-14 font-montserrat">
+                {/* Top section: Title + Form + Image */}
+                <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
+                    {/* Left side - Title and form */}
+                    <div className="w-full lg:w-1/2">
+                        <h1 className="text-[28px] sm:text-[36px] md:text-[42px] lg:text-[50px] font-bold text-[#0060AE] mb-6 sm:mb-10 leading-[120%]">
+                            Отслеживание  посылок
+                        </h1>
 
-            <Form form={form} layout="vertical">
-              <Row gutter={[16, 16]} justify="start">
-                <Col xs={24} sm={12} md={10}>
-                  <Form.Item
-                    label={<strong>Трек-номер посылки</strong>}
-                    name="trackingNumber"
-                    rules={[{ required: true, message: "Trek-raqam kiriting!" }]}
-                  >
-                    <Input size="large" className="rounded-xl" />
-                  </Form.Item>
-                </Col>
+                        <form className="w-full">
+                            <label className="text-[16px] font-semibold leading-[24px] text-[#0D0808] block mb-2">
+                                Трек-номер посылки
+                            </label>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <input
+                                        type="text"
+                                        className="w-full border border-[#909090] rounded-[6px] py-[6px] px-[16px]"
+                                        placeholder="Введите номер"
+                                    />
+                                </div>
 
-                <Col xs={24} sm={12} md={10}>
-                  <Form.Item
-                    label={<strong className="text-[#0060AE] text-lg">1+2=</strong>}
-                    name="captcha"
-                    rules={[{ required: true, message: "Captcha ni to‘ldiring!" }]}
-                  >
-                    <Input size="large" className="rounded-xl" />
-                  </Form.Item>
-                  <p className="text-xs mt-[-12px] ml-1 text-gray-500">
-                    Подсказка: нажмите на уравнение, чтобы обновить
-                  </p>
-                </Col>
+                                <div className="flex items-center justify-end">
+                                    <label className="text-[14px] font-semibold leading-[24px] text-[#0060AE] block mr-[10px]">
+                                        1 + 2 =
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="border border-[#909090] rounded-[6px] py-[6px] px-[16px]"
+                                        placeholder="Введите ответ"
+                                    />
+                                </div>
+                            </div>
+                            <p className="text-xs text-right mt-2 sm:mt-[7px] mb-6 sm:mb-[30px] ml-1 text-[#909090] font-normal">
+                                Подсказка: нажмите на уравнение, чтобы обновить
+                            </p>
 
-                <Col xs={24} md={4} className="flex items-end">
-                  <button className="w-full md:w-auto px-8 py-3 bg-[#0060AE] text-white rounded-full hover:bg-blue-700 transition-colors">
-                    Поиск
-                  </button>
-                </Col>
-              </Row>
-            </Form>
+                            <div className="flex justify-end">
+                                <button
+                                    type="submit"
+                                    className="w-full md:w-auto py-[12px] px-[40px] bg-[#0060AE] text-white rounded-full hover:bg-blue-700 transition-colors text-[16px] font-medium"
+                                >
+                                    Поиск
+                                </button>
+                            </div>
+                        </form>
+                    </div>
 
-            <div className="space-y-4 mt-10">
-              <div className="flex justify-between items-center px-6 py-5 bg-[#E6F7FF] rounded-2xl text-sm sm:text-base">
-                <span>Дата создания</span>
-                <span className="font-medium">01.01.2000</span>
-              </div>
-              <div className="flex justify-between items-center px-6 py-5 bg-[#E6F7FF] rounded-2xl text-sm sm:text-base">
-                <span>Направление</span>
-                <span className="font-medium">Направление</span>
-              </div>
-              <div className="flex justify-between items-center px-6 py-5 bg-[#E6F7FF] rounded-2xl text-sm sm:text-base">
-                <span>Статус</span>
-                <span className="font-medium">Статус</span>
-              </div>
+                    {/* Right side - Image */}
+                    <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+                        <Image
+                            src="/icons/tracking.png"
+                            alt="Человек работает с ноутбуком"
+                            width={450}
+                            height={342}
+                            className="w-full h-auto max-w-[450px] rounded-2xl"
+                        />
+                    </div>
+                </div>
+
+                {/* Bottom section: Results + Button */}
+                <div className="flex flex-col lg:flex-row items-start lg:items-end gap-6 mt-8 lg:mt-10">
+                    {/* Info Cards */}
+                    <div className="flex flex-col gap-4 w-full sm:w-auto">
+                        {[
+                            { label: "Дата создания", value: "01.01.2000" },
+                            { label: "Направление", value: "Направление" },
+                            { label: "Статус", value: "Статус" },
+                        ].map((item, i) => (
+                            <div
+                                key={i}
+                                className="w-full sm:w-[500px] md:w-[600px] h-[80px] bg-[#E6F7FF] rounded-[30px] px-[30px] py-[27px] flex items-center"
+                            >
+                                <span className="text-[#0D0808] text-[16px] font-normal leading-[26px]">
+                                    {item.label}
+                                </span>
+                                <div className="flex-grow flex justify-center">
+                                    <span className="text-[#0D0808] text-[16px] font-normal leading-[26px] text-center">
+                                        {item.value}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Button (centered on mobile, 60% width) */}
+                    <div className="w-full lg:w-auto flex justify-center lg:justify-end">
+                        <button className="bg-[#0060AE] text-white text-[14px] sm:text-[16px] py-3 px-6 rounded-full hover:bg-blue-700 transition-colors font-medium w-[60%] mx-auto sm:w-auto">
+                            Распечатать накладную
+                        </button>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          {/* Right image and button */}
-          <div className="order-1 lg:order-2 flex flex-col justify-start items-center gap-6">
-            <Image
-              src="/icons/tracking.png"
-              alt="Человек работает с ноутбуком"
-              width={450}
-              height={342}
-              className="w-full h-auto rounded-2xl"
-            />
-            <button className="bg-[#0060AE] text-white text-sm sm:text-base py-3 px-6 rounded-full w-full sm:w-auto hover:bg-blue-700 transition-colors">
-              Распечатать накладную
-            </button>
-          </div>
-        </div>
-      </div>
-    </main>
-  )
+        </main>
+    )
 }

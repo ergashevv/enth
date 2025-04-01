@@ -128,34 +128,38 @@ export default function BusinessPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white mt-[30]">
+      {/* Hero Section */}
       <section className="relative bg-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
-            <div className="space-y-6">
+        <div className="container px-4 md:px-6 lg:px-8 py-12 md:py-20">
+          {/* Flex container: vertical on mobile, horizontal on md and up */}
+          <div className="flex justify-between flex-col md:flex-row items-center gap-10 md:gap-12">
+            <div className="space-y-6 text-center md:text-left">
               <h1 className="text-[32px] sm:text-[42px] md:text-[50px] font-bold">
                 <span className="text-[#F5040B]">Решения</span>{" "}
                 <span className="text-[#0060AE] block">для бизнеса</span>
               </h1>
-              <p className="text-base md:text-lg text-[#0D0808]">
+              <p className="text-base md:text-lg text-[#0D0808] mb-[40px]">
                 Доставка для вашего бизнеса от 150 ₽ за заказ. <br /> Настройте логистику по своему запросу.
               </p>
               <button className="bg-[#0060AE] text-white px-6 py-3 rounded-full">
                 Оставить заявку
               </button>
             </div>
-            <div className="relative w-full h-[250px] sm:h-[320px] md:h-[419px] rounded-[40px] overflow-hidden">
+            <div className="relative w-full md:w-auto h-[250px] sm:h-[320px] md:h-[419px] rounded-[40px] overflow-hidden">
               <Image
                 src="/icons/business-hero.png"
-                fill
+                width={499}
+                height={100}
                 alt="Business Solutions"
-                className="object-cover"
+                className="object-cover w-full h-full"
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Solutions Section */}
       <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20">
         <h2 className="text-[28px] sm:text-[36px] md:text-[50px] font-bold text-[#0060AE] mb-12 text-center">
           Подходим для бизнеса любого масштаба

@@ -1,13 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Tailwind imports — doim boshida bo‘lishi kerak */
 @import "tailwindcss";
-
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); */
+/* Global styles */
 body {
   font-family: 'Montserrat', sans-serif;
 }
+
 .ant-btn {
   transition: all 0.2s ease-in-out !important;
 }
@@ -15,4 +14,49 @@ body {
 .ant-input {
   border-radius: 12px !important;
   padding: 16px 20px !important;
+}
+
+/* Custom responsive container — faqat bitta @layer utilities blok ichida */
+@layer utilities {
+  .container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+
+  @media (min-width: 1179px) {
+    .container {
+      max-width: 1179px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    .container {
+      max-width: 1179px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .container {
+      max-width: 1440px;
+    }
+  }
 }
