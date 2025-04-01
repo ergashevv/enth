@@ -160,7 +160,7 @@ export default function BusinessPage() {
       </section>
 
       {/* Solutions Section */}
-      <section className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-20">
+      <section className="max-w-7xl mx-auto  md:px-6 lg:px-8 py-12 md:py-20">
         <h2 className="text-[28px] sm:text-[36px] md:text-[50px] font-bold text-[#0060AE] mb-12 text-center">
           Подходим для бизнеса любого масштаба
         </h2>
