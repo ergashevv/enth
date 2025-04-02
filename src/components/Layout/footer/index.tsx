@@ -162,7 +162,7 @@ const Footer: FC = () => {
                             <Link
                                 href="https://play.google.com/"
                                 target="_blank"
-                                className="bg-black rounded-lg pt-[8.38px] pr-[13.01px] pb-[8.37px] pl-[14.38px] font-normal"
+                                className="bg-black rounded-lg pt-[11px] pr-[13.01px] pb-[8.37px] pl-[14.38px] font-normal"
                             >
                                 <Image src="/icons/googleStore.svg" alt="Google Play" width={100} height={40} />
                             </Link>
