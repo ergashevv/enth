@@ -62,15 +62,15 @@ export default function Company() {
         </div>
       </section>
 
-      <section className="rounded-3xl bg-[#E6F7FF] py-8 sm:py-10 md:py-14">
-        <div className="px-4">
+      <section className="rounded-3xl bg-[#E6F7FF]  sm:py-10 14">
+        <div className="px-[80px] py-[40px]">
           <h2 className="text-xl sm:text-2xl md:text-[50px] font-bold text-[#0060AE] mb-6 sm:mb-8">
             Мы осуществляем доставку
             <br className="hidden sm:block" />
             между следующими странами
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:px-[60]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
             {countries.map((country) => (
               <CountryCard key={country.name} name={country.name} flag={country.flag} />
             ))}
@@ -93,7 +93,7 @@ export default function Company() {
               key={doc.id}
               className="bg-[#E6F7FF] rounded-[28px] sm:rounded-[38px] p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4"
             >
-              <span className="text-gray-900 text-sm sm:text-base">{doc.name}</span>
+              <span className="text-gray-900 text-[16px] sm:text-base">{doc.name}</span>
               <button className="bg-none text-[#0060AE] px-4 sm:px-6 py-2 rounded-full transition-colors border-2 border-[#0060AE] text-sm sm:text-base">
                 Загрузить
               </button>

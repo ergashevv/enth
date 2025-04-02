@@ -12,11 +12,21 @@ export function Header() {
     { label: "Россия", icon: "/icons/russianFlag.svg", code: "RU" },
     { label: "Кыргызстан", icon: "/icons/kzFlag.svg", code: "KG" },
     { label: "Таджикистан", icon: "/icons/tjkFlag.svg", code: "TJ" },
-    { label: "Казахстан", icon: "/icons/kzFlag.svg", code: "KZ" },
+    { label: "Казахстан", icon: "/icons/kzx.svg", code: "KZ" },
     { label: "ОАЭ", icon: "/icons/baaFlag.svg", code: "AE" },
     { label: "Турция", icon: "/icons/turkeyFlag.svg", code: "TR" },
     { label: "Китай", icon: "/icons/chinaFlag.svg", code: "CN" },
   ];
+//   const countries = [
+//     { name: "Россия", flag: "/icons/russianFlag.svg" },
+//     { name: "Казахстан", flag: "/icons/kzx.svg" },
+//     { name: "Узбекистан", flag: "/icons/uzFlag.svg" },
+//     { name: "ОАЭ", flag: "/icons/baaFlag.svg" },
+//     { name: "Кыргызстан", flag: "/icons/kzFlag.svg" },
+//     { name: "Турция", flag: "/icons/turkeyFlag.svg" },
+//     { name: "Таджикистан", flag: "/icons/tjkFlag.svg" },
+//     { name: "Китай", flag: "/icons/chinaFlag.svg" },
+// ];
 
   const [selectedCountry, setSelectedCountry] = useState({
     label: "Узбекистан",

@@ -1,11 +1,17 @@
 "use client"
 
+import { Dropdown } from "antd";
 import { useState } from "react";
+import Image from "next/image";
 
 interface Option {
   label: string;
   value: string;
   description: string;
+}
+
+interface Countries {
+  label: string;
 }
 
 export default function DeliveryCalculator() {
@@ -16,6 +22,23 @@ export default function DeliveryCalculator() {
     { label: "Авто", value: "Авто", description: "от 10 рабочих дней" },
     { label: "Авто-эконом", value: "Авто-эконом", description: "15-20 рабочих дней" },
   ];
+  
+  const countries: Countries[] = [
+    { label: "Узбекистан" },
+    { label: "Россия" },
+    { label: "Кыргызстан" },
+    { label: "Таджикистан" },
+    { label: "Казахстан" },
+    { label: "ОАЭ" },
+    { label: "Турция" },
+    { label: "Китай" },
+  ];
+
+  // Transformatsiya: har bir elementga `key` va `label` qo'shamiz
+  const countryMenuItems = countries.map((country, index) => ({
+    key: index.toString(),
+    label: country.label,
+  }));
 
   const [deliveryType, setDeliveryType] = useState("Стандарт");
   const [cargoType, setCargoType] = useState("Документы");
@@ -28,31 +51,28 @@ export default function DeliveryCalculator() {
           Калькулятор доставки
         </h2>
 
-        <div className="flex flex-col sm:flex-row gap-5 mb-10">
+        <div className="flex xs:w-full xl:w-[67%] flex-col sm:flex-row gap-5 mb-10">
           {['Откуда', 'Куда'].map((label) => (
-            <div key={label} className="w-full sm:w-1/2 relative">
-              <select
-                className="appearance-none w-full h-[64px] bg-white rounded-[30px] px-6 text-[18px] leading-[24px] text-[#0D0808] shadow-inner focus:outline-none font-montserrat"
-                defaultValue=""
-              >
-                <option value="" disabled hidden>
-                  {label}
-                </option>
-                <option value="tashkent">Ташкент</option>
-                <option value="samarkand">Самарканд</option>
-                <option value="bukhara">Бухара</option>
-              </select>
-              <div className="pointer-events-none absolute top-1/2 right-5 transform -translate-y-1/2 w-[40px] h-[40px] bg-[#E6F7FF] rounded-[6px] border border-[#909090] flex items-center justify-center">
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+            <Dropdown
+              key={label}
+              menu={{ items: countryMenuItems }}
+              placement="bottomLeft"
+              arrow
+            >
+              <div className="w-full relative flex items-center bg-white h-[64px] rounded-[30px] px-6 text-[18px] leading-[24px] text-[#0D0808] shadow-inner focus:outline-none font-montserrat cursor-pointer">
+                <span>{label}</span>
+                <div className="pointer-events-none absolute top-1/2 right-5 transform -translate-y-1/2 w-[40px] h-[40px] bg-[#E6F7FF] rounded-[6px] border border-[#909090] flex items-center justify-center">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Dropdown>
           ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div>
+          <div className="bg-white p-5 rounded-[20px]">
             <h3 className="text-[18px] font-semibold text-[#0060AE] mb-3 leading-[24px]">1. Доставка</h3>
             <hr className="border-b border-gray-300 mb-3" />
             <div className="flex flex-col gap-3">
@@ -75,7 +95,7 @@ export default function DeliveryCalculator() {
             </div>
           </div>
 
-          <div>
+          <div className="bg-white p-5 rounded-[20px]">
             <h3 className="text-[18px] font-semibold text-[#0060AE] mb-3 leading-[24px]">2. Тип груза</h3>
             <hr className="border-b border-gray-300 mb-3" />
             {['Документы', 'Посылка'].map((type) => (
@@ -100,7 +120,7 @@ export default function DeliveryCalculator() {
                   key={dim}
                   type="number"
                   placeholder={dim}
-                  className="p-3 bg-transparent rounded-xl border border-gray-400 text-center placeholder:text-gray-500 "
+                  className="p-3 bg-transparent rounded-xl border border-gray-400 text-center placeholder:text-gray-500"
                 />
               ))}
               <select
@@ -123,7 +143,7 @@ export default function DeliveryCalculator() {
           <div className="bg-white px-6 py-6 rounded-[30px] shadow-md">
             <h3 className="text-[18px] font-semibold text-[#0060AE] mb-3 leading-[24px]">3. Рассчитать цену</h3>
             <hr className="border-b border-gray-300 mb-3" />
-            <span className='block mb-2 text-sm font-medium'>Специальные услуги</span>
+            <span className="block mb-2 text-sm font-medium">Специальные услуги</span>
             <div className="flex flex-col gap-2 mb-4">
               {["Надежная упаковка", "Фотоотчет"].map((service) => (
                 <label key={service} className="flex items-center text-[14px]">
@@ -136,19 +156,19 @@ export default function DeliveryCalculator() {
               <span className="text-xl font-bold text-[#0060AE]">1 + 2 =</span>
               <input type="text" className="p-2 border border-gray-300 rounded-xl w-[100px] text-center" />
             </div>
-            <span className='text-xs text-gray-500'>Подсказка: нажмите на уравнение, чтобы обновить</span>
+            <span className="text-xs text-gray-500">Подсказка: нажмите на уравнение, чтобы обновить</span>
             <div className="text-[50px] font-bold text-[#0060AE] mt-4 text-right">0$</div>
-            <button className="w-full bg-[#0060AE] text-white py-3 rounded-[30px] mt-4 hover:bg-blue-700 transition font-semibold">
+            <button className="w-[190px] float-right bg-[#0060AE] text-white py-3 rounded-[30px] mt-4 hover:bg-blue-700 transition font-bold text-[16px]">
               Рассчитать
             </button>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between mt-10 items-start md:items-center gap-4">
-          <p className='text-xs text-[#0D0808] leading-[18px] max-w-xl'>
+        <div className="flex xl:pr-[27px] flex-col md:flex-row justify-between mt-10 items-start md:items-center gap-4">
+          <p className="xl:text-[18px] sm:text-[12px] text-[#0D0808] leading-[18px] max-w-xl">
             * Цены основаны на сегодняшних тарифах и могут меняться ежедневно. Свяжитесь с нами для получения точных цен.
           </p>
-          <button className="w-full md:w-[240px] border border-[#0060AE] text-[#0060AE] py-3 rounded-[30px] hover:bg-[#E6F7FF] transition font-semibold">
+          <button className="w-full xl:w-[190px] md:w-[240px] border border-[#0060AE] text-[#0060AE] py-3 rounded-[30px] hover:bg-[#E6F7FF] transition font-semibold">
             Связаться с нами
           </button>
         </div>

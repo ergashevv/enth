@@ -23,7 +23,7 @@ export default function BusinessPage() {
         }
       ],
       image: "/icons/marketplace.png",
-      buttonText: "Подключиться к Boxberry"
+      buttonText: "Узнать подробнее"
     },
     {
       title: "У меня свой интернет-магазин",
@@ -43,7 +43,7 @@ export default function BusinessPage() {
         }
       ],
       image: "/icons/marketplace.png",
-      buttonText: "Стать клиентом Boxberry"
+      buttonText: "Узнать подробнее"
     },
     {
       title: "Я продаю в соцсетях",
@@ -83,7 +83,7 @@ export default function BusinessPage() {
         }
       ],
       image: "/icons/marketplace.png",
-      buttonText: "Оставить заявку"
+      buttonText: "Узнать подробнее"
     },
     {
       title: "Я мультиселлер",
@@ -103,7 +103,7 @@ export default function BusinessPage() {
         }
       ],
       image: "/icons/marketplace.png",
-      buttonText: "Стать клиентом Boxberry"
+      buttonText: "Узнать подробнее"
     },
     {
       title: "Соберу свою доставку",
@@ -123,7 +123,7 @@ export default function BusinessPage() {
         }
       ],
       image: "/icons/marketplace.png",
-      buttonText: "Получить персональное предложение"
+      buttonText: "Узнать подробнее"
     }
   ];
 

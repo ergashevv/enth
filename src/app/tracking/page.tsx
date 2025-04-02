@@ -1,10 +1,11 @@
 "use client"
 
+import PopularStores from "@/components/homeComponents/popularStores"
 import Image from "next/image"
 
 export default function TrackingPage() {
     return (
-        <main className="min-h-screen bg-white py-[68]">
+        <main className="min-h-screen bg-white xl:py-[68]">
             <div className="container px-4 py-8 md:py-14 font-montserrat">
                 <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12">
                     <div className="w-full lg:w-1/2">
@@ -62,7 +63,7 @@ export default function TrackingPage() {
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-start lg:items-end gap-6 mt-8 lg:mt-10">
+                <div className="flex flex-col lg:flex-row items-start lg:items-end gap-6 mt-8 lg:mt-10 ">
                     <div className="flex flex-col gap-4 w-full sm:w-auto">
                         {[
                             { label: "Дата создания", value: "01.01.2000" },
@@ -91,6 +92,7 @@ export default function TrackingPage() {
                         </button>
                     </div>
                 </div>
+                <PopularStores/>
             </div>
         </main>
     )

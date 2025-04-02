@@ -1,7 +1,7 @@
 const Tariffs = () => {
     return (
-      <main className="container mx-auto px-4 mt-[60px] sm:mt-[80px]">
-        <h1 className="text-[32px] sm:text-[40px] md:text-[50px] font-bold text-[#0060AE] mb-6">Тарифы</h1>
+      <main className="container mx-auto px-4 mt-[60px] sm:mt-[80px] ">
+        <h1 className="pt-5 text-[32px] sm:text-[40px] md:text-[50px] font-bold text-[#0060AE] mb-6">Тарифы</h1>
   
         <div className="my-[30px] sm:my-[40px] md:my-[50px] overflow-x-auto">
           <table className="min-w-[700px] w-full rounded-2xl border-separate border-spacing-2 bg-[#E6F7FF] border border-gray-300 text-sm sm:text-[15px] md:text-base">
@@ -49,7 +49,7 @@ const Tariffs = () => {
                   {row.map((cell, cellIndex) => (
                     <td
                       key={cellIndex}
-                      className="border-gray-300 rounded-lg p-3 sm:p-4 whitespace-pre-line text-[12px] sm:text-[13px] text-center"
+                      className="border-gray-300 rounded-lg p-3 sm:p-4 whitespace-pre-line text-[16px] sm:text-[13px] text-center"
                     >
                       {cell}
                     </td>
@@ -60,7 +60,7 @@ const Tariffs = () => {
           </table>
         </div>
   
-        <p className="text-[12px] sm:text-[13px] leading-relaxed">
+        <p className="text-[14px] font-medium sm:text-[13px] leading-relaxed">
           Цены указаны только для отправки личных вещей от ПВЗ до ПВЗ.<br />
           По направлению Россия — Узбекистан по тарифам СТАНДАРТ и АВТО-ЭКОНОМ для оформления груза требуется фото/скан паспорта получателя.<br />
           Стоимость и сроки перевозки коммерческих изделий, а также дорогостоящих изделий свыше 250$ рассчитывается с менеджером по согласованию.<br />

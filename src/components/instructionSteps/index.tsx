@@ -58,7 +58,7 @@ const HowItWorks = () => {
 
   return (
     <main className="mx-auto mt-[60px] sm:mt-[80px] md:mt-[100px]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid gap-6">
         {instructions.map(({ number, title, details }, index) => {
           const isOpen = openIndex === index;
 

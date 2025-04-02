@@ -17,12 +17,12 @@ const countries: Country[] = [
     { code: "uz", name: "Узбекистан", flag: "uzFlag" },
     { code: "ru", name: "Россия", flag: "russianFlag" },
     { code: "tj", name: "Таджикистан", flag: "tjkFlag" },
-    { code: "kz", name: "Казахстан", flag: "kzFlag" },
+    { code: "kz", name: "Казахстан", flag: "kzx" },
+    { code: "kg", name: "Кыргызстан", flag: "kzFlag" },
     { code: "ae", name: "ОАЭ", flag: "baaFlag" },
     { code: "tr", name: "Турция", flag: "turkeyFlag" },
     { code: "cn", name: "Китай", flag: "chinaFlag" },
-];
-
+  ];
 const Footer: FC = () => {
     return (
         <footer className="bg-[#E6F7FF] text-gray-800 pt-12 pb-8">

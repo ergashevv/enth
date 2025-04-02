@@ -52,7 +52,7 @@ export default function DeliveryCalculator() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div>
+          <div className="bg-white p-5 rounded-[20px]">
             <h3 className="text-[16px] font-bold text-[#0060AE] mb-2 leading-[24px]">1. Доставка</h3>
             <hr className="border-b border-gray-300 mb-3" />
             <div className="flex flex-col gap-3">
@@ -78,7 +78,7 @@ export default function DeliveryCalculator() {
             </div>
           </div>
 
-          <div>
+          <div className="bg-white p-5 rounded-[20px]">
             <h3 className="text-[16px] font-bold text-[#0060AE] mb-2 leading-[24px]">2. Тип груза</h3>
             <hr className="border-b border-gray-300 mb-3" />
             {["Документы", "Посылка"].map((type) => (
@@ -153,11 +153,11 @@ export default function DeliveryCalculator() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between mt-10 items-start md:items-center gap-4">
-        <p className='text-[12px] text-[#0D0808] leading-[20px] max-w-xl font-normal'>
+        <div className="flex xl:pr-[27px] flex-col md:flex-row justify-between mt-10 items-start md:items-center gap-4">
+        <p className='xl:text-[18px] sm:text-[12px] text-[#0D0808] leading-[20px] max-w-xl font-normal'>
             * Цены основаны на сегодняшних тарифах и могут меняться ежедневно. Свяжитесь с нами для получения точных цен.
           </p>
-          <button className="w-full md:w-[240px] border border-[#0060AE] text-[#0060AE] py-3 rounded-[30px] hover:bg-[#E6F7FF] transition font-bold text-[16px]">
+          <button className="w-full xl:w-[190px] md:w-[240px] border border-[#0060AE] text-[#0060AE] py-3 rounded-[30px] hover:bg-[#E6F7FF] transition font-bold text-[16px]">
             Связаться с нами
           </button>
         </div>

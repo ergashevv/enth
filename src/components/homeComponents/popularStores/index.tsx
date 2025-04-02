@@ -18,13 +18,14 @@ export default function PopularStores() {
     const [itemsToShow, setItemsToShow] = useState(3);
 
     const stores: Store[] = [
-        { id: 1, name: "Магазин 1", image: "https://picsum.photos/600/600?random=1" },
-        { id: 2, name: "Магазин 2", image: "https://picsum.photos/600/600?random=2" },
-        { id: 3, name: "Магазин 3", image: "https://picsum.photos/600/600?random=3" },
-        { id: 4, name: "Магазин 4", image: "https://picsum.photos/600/600?random=4" },
-        { id: 5, name: "Магазин 5", image: "https://picsum.photos/600/600?random=5" },
-        { id: 6, name: "Магазин 6", image: "https://picsum.photos/600/600?random=6" },
-    ];
+        { id: 1, name: "Магазин 1", image: "/icons/store.png" },
+        { id: 2, name: "Магазин 2", image: "/icons/store.png" },
+        { id: 3, name: "Магазин 3", image: "/icons/store.png" },
+        { id: 4, name: "Магазин 4", image: "/icons/store.png" },
+        { id: 5, name: "Магазин 5", image: "/icons/store.png" },
+        { id: 6, name: "Магазин 6", image: "/icons/store.png" },
+      ];
+      
 
     useEffect(() => {
         function handleResize() {
@@ -62,8 +63,8 @@ export default function PopularStores() {
     };
 
     return (
-        <section className="w-full bg-white py-14">
-            <div className="  mx-auto px-4">
+        <section className="w-full bg-white xl:py-14">
+            <div className="mx-auto xl:px-4 pt-5">
                 <div className="container">
                     <h2 className="  text-[28px] sm:text-[34px] md:text-[42px] lg:text-[50px] font-bold text-[#E52421] mb-[50px] leading-tight">
                         Популярные магазины
