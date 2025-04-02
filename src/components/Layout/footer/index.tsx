@@ -155,7 +155,7 @@ const Footer: FC = () => {
                             <Link
                                 href="https://apps.apple.com/"
                                 target="_blank"
-                                className="bg-black rounded-lg pt-[6.59px] pr-[21.99px] pb-[7.65px] pl-[12.52px] font-normal"
+                                className="bg-black rounded-lg px-[15px] py-[7px] pb-[7.65px] pl-[12.52px] font-normal"
                             >
                                 <Image src="/icons/appStore.svg" alt="App Store" width={100} height={40} />
                             </Link>
