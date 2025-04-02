@@ -2,7 +2,6 @@
 
 import { Dropdown } from "antd";
 import { useState } from "react";
-import Image from "next/image";
 
 interface Option {
   label: string;
