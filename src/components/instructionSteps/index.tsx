@@ -80,11 +80,10 @@ const HowItWorks = () => {
                   </h3>
                 </div>
                 <div
-                  className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border-2 transition-colors duration-300 ${
-                    isOpen
+                  className={`w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full border-2 transition-colors duration-300 ${isOpen
                       ? "border-red-500 text-red-500"
                       : "border-[#0060AE] text-[#0060AE]"
-                  }`}
+                    }`}
                 >
                   {isOpen ? (
                     <Minus className="w-5 h-5" />
@@ -110,9 +109,9 @@ const HowItWorks = () => {
                     {details}
                   </p>
 
-                    <button className="float-right mt-4 px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-50 text-sm">
-                      Выбрать магазин
-                    </button>
+                  <button className="float-right mt-4 px-4 py-2 border border-red-500 text-red-500 rounded-full hover:bg-red-50 text-sm">
+                    Выбрать магазин
+                  </button>
                 </div>
               </div>
             </div>
