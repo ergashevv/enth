@@ -1,5 +1,6 @@
 "use client"
 
+import { Dropdown } from "antd";
 import { useState } from "react";
 
 interface Option {
@@ -20,34 +21,44 @@ export default function DeliveryCalculator() {
   const [deliveryType, setDeliveryType] = useState("Стандарт");
   const [cargoType, setCargoType] = useState("Документы");
   const [unit, setUnit] = useState("см");
+  const countries = [
+    { label: "Узбекистан" },
+    { label: "Россия" },
+    { label: "Кыргызстан" },
+    { label: "Таджикистан" },
+    { label: "Казахстан" },
+    { label: "ОАЭ" },
+    { label: "Турция" },
+    { label: "Китай" },
+  ];
 
+  const countryMenuItems = countries.map((country, index) => ({
+    key: index.toString(),
+    label: country.label,
+  }));
   return (
     <div className="bg-[#E6F7FF] py-10 px-4 sm:px-6 lg:px-8 rounded-[60px] w-full mx-auto mt-10 font-montserrat mb-[100]">
       <div className="container">
         <h2 className="text-[#0060AE] text-[36px] sm:text-[42px] md:text-[50px] font-bold leading-[120%] mb-10">
           Калькулятор доставки
         </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {["Откуда", "Куда"].map((label) => (
-            <div key={label} className="relative">
-              <select
-                className="appearance-none w-full h-[64px] bg-white rounded-[30px] px-6 text-[16px] text-[#0D0808] leading-[24px] font-normal focus:outline-none"
-                defaultValue=""
-              >
-                <option value="" disabled hidden>
-                  {label}
-                </option>
-                <option value="tashkent">Ташкент</option>
-                <option value="samarkand">Самарканд</option>
-                <option value="bukhara">Бухара</option>
-              </select>
-              <div className="pointer-events-none absolute top-1/2 right-5 transform -translate-y-1/2 w-[40px] h-[40px] bg-[#E6F7FF] rounded-[6px] border border-[#909090] flex items-center justify-center">
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L5 5L9 1" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+        <div className="flex xs:w-full xl:w-[67%] flex-col sm:flex-row gap-5 mb-10">
+          {['Откуда', 'Куда'].map((label) => (
+            <Dropdown
+              key={label}
+              menu={{ items: countryMenuItems }}
+              placement="bottomLeft"
+              arrow
+            >
+              <div className="w-full relative flex items-center bg-white h-[64px] rounded-[30px] px-6 text-[18px] leading-[24px] text-[#0D0808] shadow-inner focus:outline-none font-montserrat cursor-pointer">
+                <span>{label}</span>
+                <div className="pointer-events-none absolute top-1/2 right-5 transform -translate-y-1/2 w-[40px] h-[40px] bg-[#E6F7FF] rounded-[6px] border border-[#909090] flex items-center justify-center">
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L9 1" stroke="#333" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Dropdown>
           ))}
         </div>
 
@@ -154,7 +165,7 @@ export default function DeliveryCalculator() {
         </div>
 
         <div className="flex xl:pr-[27px] flex-col md:flex-row justify-between mt-10 items-start md:items-center gap-4">
-        <p className='xl:text-[18px] sm:text-[12px] text-[#0D0808] leading-[20px] max-w-xl font-normal'>
+          <p className='xl:text-[18px] sm:text-[12px] text-[#0D0808] leading-[20px] max-w-xl font-normal'>
             * Цены основаны на сегодняшних тарифах и могут меняться ежедневно. Свяжитесь с нами для получения точных цен.
           </p>
           <button className="w-full xl:w-[190px] md:w-[240px] border border-[#0060AE] text-[#0060AE] py-3 rounded-[30px] hover:bg-[#E6F7FF] transition font-bold text-[16px]">
